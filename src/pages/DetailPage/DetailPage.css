@@ -1,0 +1,19 @@
+/* .modal__poster-img {
+  position: relative;
+} */
+
+.original-title-background, .title-background {
+  background-color: black;
+  opacity: 0.3;
+}
+
+.original-title, .title {
+  /* position: absolute;
+  left: 30px; */
+  font-size: 30px;
+  font-weight: 800;
+  color: white;
+  opacity: 1;
+  z-index: 1;
+}
+
