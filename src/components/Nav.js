@@ -10,6 +10,7 @@ const Nav = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
+
     // ⬇️ 컴포넌트를 사용하지 않을 때 호출
     return () => {
       window.removeEventListener("scroll", handleScroll());
