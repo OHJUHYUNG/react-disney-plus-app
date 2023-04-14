@@ -1,19 +1,43 @@
-/* .modal__poster-img {
+.wrap {
   position: relative;
-} */
+}
 
-.original-title-background, .title-background {
-  background-color: black;
-  opacity: 0.3;
+.modal__poster-img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  text-align: left;
+  top: 75%;
+  left: 20px;
+  transform: translate(0%, -10%);
+  
 }
 
 .original-title, .title {
-  /* position: absolute;
-  left: 30px; */
   font-size: 30px;
   font-weight: 800;
   color: white;
   opacity: 1;
   z-index: 1;
 }
+
+@media (min-width: 1000px) {
+.original-title, .title {
+  width: 100%;
+  font-size: 50px;
+  position: absolute;
+  left: 30px;
+}
+
+.title {
+  width: 300px;
+  margin-top: 70px
+}
+}
+
 

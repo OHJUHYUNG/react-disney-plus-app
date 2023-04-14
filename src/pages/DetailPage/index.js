@@ -26,13 +26,17 @@ const DetailPage = () => {
   return (
     <section>
       <div className="container">
-        <img
-          className="modal__poster-img"
-          src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
-          alt="modal__poster-img"
-        />
-        <div className="original-title">{movie.original_title}</div>
-        <div className="title">{movie.title} </div>
+        <div className="wrap">
+          <img
+            className="modal__poster-img"
+            src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
+            alt="modal__poster-img"
+          />
+          <div className="text-container">
+            <div className="original-title">{movie.original_title}</div>
+            <div className="title">{movie.title} </div>
+          </div>
+        </div>
       </div>
     </section>
   );

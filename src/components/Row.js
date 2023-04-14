@@ -25,7 +25,8 @@ const Row = ({ title, id, fetchUrl }) => {
 
   useEffect(() => {
     fetchMovieData();
-  }, [fetchUrl]);
+    // }, [fetchUrl]);
+  }, [fetchMovieData]);
 
   const handleClick = (movie) => {
     setModalOpen(true);
@@ -63,7 +64,7 @@ const Row = ({ title, id, fetchUrl }) => {
       >
         <Content id={id}>
           {movies.map((movie) => (
-            <SwiperSlide>
+            <SwiperSlide key={movie.id}>
               <Wrap>
                 <img
                   key={movie.id}
