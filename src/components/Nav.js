@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import {
   getAuth,
   GoogleAuthProvider,
@@ -44,11 +44,6 @@ const Nav = () => {
     };
   }, []);
 
-  useLayoutEffect(() => {
-    if (location) setSearchValue(location.value);
-    inputRef.current.focus();
-  });
-
   const handleScroll = () => {
     if (window.scrollY > 50) {
       handleShow(true);
@@ -57,17 +52,26 @@ const Nav = () => {
     }
   };
 
-  const inputRef = useRef();
-  console.log(inputRef);
-
   const handleChange = (e) => {
     setSearchValue(e.target.value);
     navigate(`/search?q=${e.target.value}`, {
       state: { value: e.target.value },
     });
   };
-  console.log(location);
-  // console.log("useLocation/search ===> ", useLocation.search);
+  // console.log(location);
+  // console.log("useLocation/search ===> ", useLocation().search);
+
+  const inputRef = useRef();
+  // console.log(inputRef);
+  const params = useParams();
+  console.log(params.data);
+
+  useEffect(() => {
+    if (location) {
+      setSearchValue(location.value);
+      inputRef.current.focus();
+    }
+  }, [location]);
 
   const handleAuth = () => {
     signInWithPopup(auth, provider)
